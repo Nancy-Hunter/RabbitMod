@@ -4,7 +4,7 @@ Designed as a sleek, simple pet adoption site that can be easily updated by clie
 
 **Link to project:** TBD
 
-<img src="https://ibb.co/4NTN0mk" alt="Beautiful Bunny to Adopt" width="40%">
+<img src="https://i.ibb.co/VpGk8Kp/Screenshot-2024-02-05-180046.png" alt="Beautiful Bunny to Adopt" width="35%">
 
 ## How It's Made:
 
