@@ -4,7 +4,7 @@ Designed as a sleek, simple pet adoption site that can be easily updated by clie
 
 **Link to project:** TBD
 
-<img src="https://www.thecocktaildb.com/images/media/drink/dztcv51598717861.jpg" alt="smashed watermelon margarita" width="30%">
+<img src="https://ibb.co/4NTN0mk" alt="Beautiful Bunny to Adopt" width="40%">
 
 ## How It's Made:
 
