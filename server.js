@@ -33,6 +33,6 @@ app.get('/', (req, res) => {
 app.get('/API', (req, res) => {
     res.json(ChiangMaiRestaurants)
 })
-app.listen(PORT, () => {
+app.listen('https://bunny-database.onrender.com', () => {
     console.log(`The server is running on ${PORT}`)
 })
