@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 const PORT = 8000
+const cors = require('cors')
+
+app.use(cors())
+
 
 const ChiangMaiRestaurants = {
     'king of noodles' : {
@@ -33,6 +37,6 @@ app.get('/', (req, res) => {
 app.get('/API', (req, res) => {
     res.json(ChiangMaiRestaurants)
 })
-app.listen('https://bunny-database.onrender.com', () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log(`The server is running on ${PORT}`)
 })
