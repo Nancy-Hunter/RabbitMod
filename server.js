@@ -9,7 +9,7 @@ let db,
     dbConnectionStr = 'mongodb+srv://hunterNancyM:B@byC0der@cluster0.4wdblwn.mongodb.net/?retryWrites=true&w=majority',
     dbName = 'ModPage'
 
-MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
+MongoClient.connect(dbConnectionStr)
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
@@ -17,7 +17,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded())
 app.use(express.json())
 
 app.get('/',(req, res)=>{
