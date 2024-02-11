@@ -1,40 +1,48 @@
 const express = require('express')
 const app = express()
+const MongoClient = require('mongodb').MongoClient
 const PORT = 8000
 
 
 
-const ChiangMaiRestaurants = {
-    'king of noodles' : {
-        address: "",
-        favoriteDish: 'Crispy Pork, noodles, and wonton dumplings',
-        hours: '2PM-10PM',
-        price: '60 baht',
-    }, 
-    'Good Smells' : {
-        address: "",
-        favoriteDish: 'Pad Kee Mow',
-        hours: '7AM -2PM',
-        price: '50-60 baht',
-    },'Good Smells 2' : {
-        address: "",
-        favoriteDish: 'Crispy Pork and morning glory over rice with an egg',
-        hours: '10AM -5PM',
-        price: '50-60 baht',
-    },'Je Hoa' : {
-        address: "",
-        favoriteDish: 'chicken or shrimp dumplings with a bowl of noodles and sliced pork AND mantou desser',
-        hours: '11AM -7PM',
-        price: '90-120 baht',
-    },
-}
+let db,
+    dbConnectionStr = 'mongodb+srv://hunterNancyM:B@byC0der@cluster0.4wdblwn.mongodb.net/?retryWrites=true&w=majority',
+    dbName = 'ModPage'
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
+    .then(client => {
+        console.log(`Connected to ${dbName} Database`)
+        db = client.db(dbName)
+    })
+
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+app.use(express.json())
+app.use(express.urlencoded())
+
+app.get('/',(req, res)=>{
+    db.collection('ModPage').find().toArray()
+    .then(data => {
+        res.render('index.ejs', { info: data })
+    })
+    .catch(error => console.error(error))
 })
-app.get('/API', (req, res) => {
-    res.json(ChiangMaiRestaurants)
+
+app.post('/modPage', (req, res) => {
+    db.collection('ModPage').insertOne(
+       {
+        petName: req.body.petName,
+        petAge: req.body.petAge, 
+        description: req.body.description,
+        picture: req.body.picture,
+       })
+    .then (result => {
+        console.log('bunny added')
+        res.redirect('/')
+    })
+    .catch(error=> console.error(error))
 })
+
 app.listen(process.env.PORT || PORT, () => {
     console.log(`The server is running on ${PORT}`)
 })

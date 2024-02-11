@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rabbit Mod Page</title>
+</head>
+<body>
+    <h1>Bunny Mod Page</h1>
+    <img src="images/rabbit.png" alt="a gorgeous bunny"></img>
+
+    <form action="/modPage" method= 'POST'>
+        <label for="petName">Pet Name</label>
+            <input type="text" id = "petName" name ='petName' placeholder="enter name">
+        <label for="petAge">Pet Age</label>
+            <input type="text" id = "petAge" name = "petAge"placeholder="enter age">
+        <label for="description">Tell me more about them</label>
+            <input type="text" id = "description"  name = "description"placeholder="tell me more"> 
+        <label for="picture">Add a picture</label>
+            <input type="file" id = "picture" name = "picture" accept="image/png, image/jpeg">    
+        <button id="submit" type="submit" name="button">Submit</button>
+    </form>
+    
+    <h2>Currently Available Pets</h2>
+
+    <section class="wrapper">
+    <% for(let i=0; i < info.length; i++) {%>
+        <section class = 'entry'>
+            <img src=<%= info[i].picture %> alt="very cute bff">
+            <h4><%= info[i].petName %></h4>
+            <span class="age"><%= info[i].petAge %></span>
+            <p><%= info[i].description %></p>
+            <span class='edit'>edit</span>
+            <span class='del'>delete</span>
+        </section>    
+    <% } %>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
