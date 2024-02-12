@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rabbit Mod Page</title>
+</head>
+<body>
+    <section class = 'mod-header'>
+        <h1>Bunny Mod Page</h1>
+        <img class= 'header-img' src="images/rabbit.png" alt="a gorgeous bunny"></img>
+    </section>
+    <section class = 'form-wrapper'>
+        <form action="/modPage" method= 'POST'>
+            <label for="petName">Pet Name
+                <input type="text" id = "petName" name ='petName' placeholder="enter name">
+            </label>
+            <label for="petAge">Pet Age
+                <input type="text" id = "petAge" name = "petAge"placeholder="enter age">
+            </label>
+            <label for="description">Tell me more about them
+                <input type="text" id = "description"  name = "description"placeholder="tell me more"> 
+            </label>
+            <label for="picture">Add a picture
+                <input type="file" id = "picture" name = "picture" accept="image/png, image/jpeg">    
+            </label>
+            <button id="submit" type="submit" name="button">Submit</button>
+        </form>
+    </section>
+    
+
+    <section class="wrapper">
+        <h2>Currently Available Pets</h2>
+
+        <% for(let i=0; i < info.length; i++) {%>
+            <section class = 'entry'>
+                <img src='<%= info[i].picture %>' alt="very cute bff">
+                <div>
+                    <h4><%= info[i].petName %></h4>
+                    <span class="age"><%= info[i].petAge %></span>
+                    <p><%= info[i].description %></p>
+                    <span class='edit'>edit</span>
+                    <span class='del'>delete</span>
+                </div>
+            </section>    
+        <% } %>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
