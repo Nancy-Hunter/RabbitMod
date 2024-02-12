@@ -6,7 +6,7 @@ const PORT = 8000
 
 
 let db,
-    dbConnectionStr = 'mongodb+srv://hunterNancyM:B@byC0der@cluster0.4wdblwn.mongodb.net/?retryWrites=true&w=majority',
+    dbConnectionStr = 'mongodb+srv://hunterNancyM:B%40byC0der@cluster0.4wdblwn.mongodb.net/?retryWrites=true&w=majority',
     dbName = 'ModPage'
 
 MongoClient.connect(dbConnectionStr)
