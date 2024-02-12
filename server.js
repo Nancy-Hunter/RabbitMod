@@ -6,7 +6,7 @@ const PORT = 8000
 
 
 let db,
-    dbConnectionStr = 'mongodb+srv://hunterNancyMizZo6fUAiVl87EHP@cluster0.4wdblwn.mongodb.net/?retryWrites=true&w=majority',
+    dbConnectionStr = 'mongodb+srv://hunterNancy:izZo6fUAiVl87EHP@cluster0.4wdblwn.mongodb.net/?retryWrites=true&w=majority',
     dbName = 'ModPage-pets'
 
 MongoClient.connect(dbConnectionStr)
@@ -42,6 +42,7 @@ app.post('/modPage', (req, res) => {
     })
     .catch(error=> console.error(error))
 })
+
 
 app.listen(process.env.PORT || PORT, () => {
     console.log(`The server is running on ${PORT}`)
