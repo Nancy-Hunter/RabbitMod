@@ -1,12 +1,13 @@
 const express = require('express')
 const app = express()
+require('dotenv').config()
 const MongoClient = require('mongodb').MongoClient
 const PORT = 8000
 
 
 
 let db,
-    dbConnectionStr = 'mongodb+srv://hunterNancyM:izZo6fUAiVl87EHP@cluster0.4wdblwn.mongodb.net/?retryWrites=true&w=majority',
+    dbConnectionStr = process.env.DB_STRING,
     dbName = 'ModPage-pets'
 
 MongoClient.connect(dbConnectionStr)
@@ -41,6 +42,15 @@ app.post('/modPage', (req, res) => {
         res.redirect('/')
     })
     .catch(error=> console.error(error))
+})
+
+app.delete('/deleteEntry', (req, res)=> {
+    db.collection('ModPage').deleteOne({petName: req.body.petNameString})
+    .then(result => {
+        console.log('entry deleted')
+        res.json('rabbit deleted')
+    })
+    .catch(error => console.error(error))
 })
 
 

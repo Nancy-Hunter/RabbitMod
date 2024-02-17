@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/42df4c29ec.js" crossorigin="anonymous"></script>
     <title>Rabbit Mod Page</title>
 </head>
 <body>
@@ -40,8 +41,8 @@
                     <h4><%= info[i].petName %></h4>
                     <span class="age"><%= info[i].petAge %></span>
                     <p><%= info[i].description %></p>
-                    <span class='edit'>edit</span>
-                    <span class='del'>delete</span>
+                    <span class='edit fa fa-pen-to-square'></span>
+                    <span class='trash fa fa-trash'></span>
                 </div>
             </section>    
         <% } %>
