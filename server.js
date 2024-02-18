@@ -44,6 +44,23 @@ app.post('/modPage', (req, res) => {
     .catch(error=> console.error(error))
 })
 
+app.put ('/putEntry', (req, res) => {
+    db.collection('ModPage').updateOne(
+        {
+            petName: req.body.petName,
+            petAge: req.body.petAge, 
+            description: req.body.description,
+            picture: req.body.picture,
+        }
+    )
+    .then(result => {
+        console.log('updated ???')
+        response.json('it updated')
+    })
+    .catch(error => console.error(error))
+
+})
+
 app.delete('/deleteEntry', (req, res)=> {
     db.collection('ModPage').deleteOne({petName: req.body.petNameString})
     .then(result => {
