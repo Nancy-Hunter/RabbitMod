@@ -47,15 +47,20 @@ app.post('/modPage', (req, res) => {
 app.put ('/putEntry', (req, res) => {
     db.collection('ModPage').updateOne(
         {
-            petName: req.body.petName,
-            petAge: req.body.petAge, 
-            description: req.body.description,
-            picture: req.body.picture,
+            petName: req.body.petNameString,
+        }, 
+        {
+            $set: {
+                petName: 'edited',
+                // petAge: req.body.petAge, 
+                // description: req.body.description,
+                // picture: req.body.picture,
+            },
         }
     )
     .then(result => {
         console.log('updated ???')
-        response.json('it updated')
+        res.json('it updated')
     })
     .catch(error => console.error(error))
 

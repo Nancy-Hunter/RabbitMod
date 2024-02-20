@@ -39,7 +39,7 @@ async function deleteEntry() {
 
 
 async function editEntry() {
-    console.log('edit function entered')
+    console.log('edit function entered') 
     var result = confirm("Do you want to edit?")
     if (result) {
         const targetName = this.parentNode.childNodes[1].innerText
@@ -64,4 +64,8 @@ async function editEntry() {
             console.log(err)
         }
     }
+}
+
+function openEditor (){
+    
 }
