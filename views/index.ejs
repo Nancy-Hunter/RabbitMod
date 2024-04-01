@@ -21,7 +21,7 @@
                 <input type="text" id = "petAge" name = "petAge"placeholder="enter age">
             </label>
             <label for="description">Tell me more about them
-                <input type="text" id = "description"  name = "description"placeholder="tell me more"> 
+                <input type="text" id = "description" name = "description" placeholder="tell me more"> 
             </label>
             <label for="picture">Add a picture
                 <input type="file" id = "picture" name = "picture" accept="image/png, image/jpeg">    
@@ -36,11 +36,11 @@
 
         <% for(let i=0; i < info.length; i++) {%>
             <section class = 'entry'>
-                <img src='<%= info[i].picture %>' alt="very cute bff">
+                <img src='<%= # %>' alt="very cute bff">
                 <div>
-                    <h4><%= info[i].petName %></h4>
-                    <span class="age"><%= info[i].petAge %></span>
-                    <p><%= info[i].description %></p>
+                    <h4><%= pets[i].petName %></h4>
+                    <span class="age"><%= pets[i].petAge %></span>
+                    <p><%= pets[i].description %></p>
                     <span class='edit fa fa-pen-to-square'></span>
                     <span class='trash fa fa-trash'></span>
                 </div>
