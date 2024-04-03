@@ -2,7 +2,6 @@ const Pet = require('../models/petModel')
 
 module.exports = {
     getPets: async (req,res)=>{
-        console.log(req)
         try{
             const petItems = await Pet.find()
             res.render('index.ejs', {pets: petItems})
