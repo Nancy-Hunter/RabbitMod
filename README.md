@@ -2,7 +2,7 @@
 
 Designed as a sleek, simple pet adoption site that can be easily updated by client
 
-**Link to project:** TBD
+**Link to project:** private
 
 <img src="https://i.ibb.co/VpGk8Kp/Screenshot-2024-02-05-180046.png" alt="Beautiful Bunny to Adopt" width="35%">
 
