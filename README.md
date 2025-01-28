@@ -1,6 +1,6 @@
 # Rabbit and Pet Adoption Site
 
-Designed as a sleek, simple pet adoption site that can be easily updated by client
+Designed as a sleek, simple pet adoption site that can be easily updated by client. An API that follows the REST principles, utilizing standard HTTP methods like GET, POST, PUT, and DELETE to manage resources. 
 
 **Link to project:** private
 
@@ -8,14 +8,12 @@ Designed as a sleek, simple pet adoption site that can be easily updated by clie
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, node, express, render
+**Tech used:** HTML, CSS, JavaScript, Node.js, Express, Render, MongoDB
 
-Allows client to locally update pet adoption database. 
+Allows client to locally update pet adoption database. Utilizes MongoDB to create a RESTful API. The UI allows for a simple form submission (that can only be accessed by the moderator) to update the database. Designed for ease of use and maintainability without requiring a sustained developer. 
 
 ## Optimizations
 
-Many many things
+User Interface could have some stylistic improvements for a sleekier feel. Responsive design could be added for improved performance on mobile devices. 
 
-## Lessons Learned:
 
-We will see
